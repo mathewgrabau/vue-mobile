@@ -1,6 +1,11 @@
 <template>
   <v-app>
     <TopToolbar></TopToolbar>
+
+    <v-content>
+      <router-view></router-view>
+    </v-content>
+
     <BottomNav></BottomNav>
   </v-app>
 </template>
@@ -17,6 +22,6 @@ import BottomNav from './components/BottomNav.vue';
   }
 })
 export default class extends Vue {
-  
+
 }
 </script>
