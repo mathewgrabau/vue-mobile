@@ -23,16 +23,18 @@
 
         <v-toolbar color="primary" fixed app dark>
             <v-toolbar-side-icon @click.stop="toggleMenu"></v-toolbar-side-icon>
-            <v-toolbar-title class="white--text">Vue News</v-toolbar-title>
+            <v-toolbar-title class="white--text">{{ title }}</v-toolbar-title>
         </v-toolbar>
     </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { Getter } from 'vuex-class';
 
 @Component
 export default class TopToolbar extends Vue {
+    @Getter("title", {namespace: "topToolbar"}) title !: string;
     showMenu: boolean = false;
 
     toggleMenu() : void {
